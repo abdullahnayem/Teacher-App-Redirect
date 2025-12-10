@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    window.onload = function () {
+      const playStoreUrl = "https://play.google.com/store/apps/details?id=com.muallimedu.teacher";
+      const appStoreUrl = "https://apps.apple.com/us/app/muallim-teacher/id6740751011";
+
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      const platform = navigator.platform.toLowerCase();
+
+      // iOS (iPhone, iPad, iPod)
+      if (/iphone|ipad|ipod/.test(userAgent.toLowerCase())) {
+        window.location.href = appStoreUrl;
+      }
+      // Android
+      else if (/android/.test(userAgent.toLowerCase())) {
+        window.location.href = playStoreUrl;
+      }
+      // macOS
+      else if (platform.indexOf('mac') >= 0) {
+        window.location.href = appStoreUrl;
+      }
+      // Windows
+      else if (platform.indexOf('win') >= 0) {
+        window.location.href = playStoreUrl;
+      }
+      // Linux or others
+      else {
+        window.location.href = playStoreUrl;
+      }
+    };
+  </script>
+</head>
+
+</html>
